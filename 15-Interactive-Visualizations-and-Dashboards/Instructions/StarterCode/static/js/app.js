@@ -58,8 +58,8 @@ function buildPlot(bellyData) {
           // margin: { t: 30}
         };
         var bubbleData = [{
-          x: values,
-          y: ids,
+          x: ids,
+          y: values,
           text: labels,
           mode: "markers",
           marker: {
