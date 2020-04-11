@@ -42,8 +42,10 @@ function buildPlot(bellyData) {
         
         var labels = result.otu_labels;
         var ids = result.otu_ids;
+        
         var values = result.sample_values;
-        var sortedValues = values.sort(desc)
+        var sortedValues = values.reverse();
+        var splicedValues = sortedValues.splice(0,10);
 
         var bubbleLayout = {
           title: "Cultures per Sample",
@@ -70,7 +72,7 @@ function buildPlot(bellyData) {
           xaxis: {title: "Values"},     
         };
         var barData = [{
-          x: values,
+          x: splicedValues,
           y: ids,
           text: labels,
           type: "bar", 
